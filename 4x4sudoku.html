@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<!-- File: 4x4sudoku.js -->
+<!-- Desc: 4x4 Sudoku game board -->
+<!-- Author: Yuriy koziy -->
+
+<html>
+	<head>
+
+		<title>4x4 Sudoku</title>
+		<style type="text/css">
+			body {
+				background-color: #9ED3DE;
+			}
+			table {
+				table-layout: fixed;
+			}
+			#cont {
+				text-align: center;
+				width: 100%;
+			}
+			#board {
+				margin-left: auto;
+				margin-right: auto;
+				height: 400px;
+				width: 400px;
+				border-collapse: collapse;
+				border: 5px solid black;
+			}
+
+			.quadrant {
+				border: 3px solid black;
+			}
+
+			#b1, #b2, #b3, #b4 {
+				height: 191px;
+				width: 191px;
+				border-collapse: collapse;
+			}
+
+			.quad {
+				border: 1px solid black;
+			}
+
+			#btnUndo {
+				color: red;
+				width: 100px;
+				height: 50px;
+				font-weight: bold;
+			}
+
+			span {
+				text-align: center;
+				display: block;
+			}
+		</style>
+        <script type="text/javascript" src="sudoku.js"></script>
+		<script type="text/javascript" src="game.js"></script>
+	</head>
+	<body onload="initialize()">
+		<div id="cont">
+			<h1>Move Count: <span id="mcount">0</span></h1>
+			<table id="board">
+				<tbody>
+					<tr>
+						<td class="quadrant" align="center">
+						<table id="b1" border="0">
+							<tbody>
+								<tr align="center">
+									<td class="quad">
+									<table id="c0" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(0,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(0,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(0,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(0,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c1" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(1,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(1,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(1,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(1,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+								<tr align="center">
+									<td class="quad">
+									<table id="c4" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(4,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(4,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(4,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(4,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c5" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(5,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(5,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(5,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(5,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+							</tbody>
+						</table></td>
+						<td class="quadrant" align="center">
+						<table id="b2" border="0">
+							<tbody>
+								<tr align="center">
+									<td class="quad">
+									<table id="c2" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(2,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(2,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(2,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(2,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c3" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(3,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(3,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(3,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(3,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+								<tr align="center">
+									<td class="quad">
+									<table id="c6" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(6,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(6,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(6,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(6,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c7" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(7,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(7,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(7,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(7,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr align="center">
+						<td class="quadrant" align="center">
+						<table id="b3" border="0">
+							<tbody>
+								<tr align="center">
+									<td class="quad">
+									<table id="c8" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(8,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(8,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(8,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(8,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c9" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(9,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(9,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(9,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(9,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+								<tr align="center">
+									<td class="quad">
+									<table id="c12" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(12,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(12,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(12,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(12,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c13" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(13,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(13,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(13,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(13,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+							</tbody>
+						</table></td>
+						<td class="quadrant" align="center">
+						<table id="b4" border="0">
+							<tbody>
+								<tr align="center">
+									<td class="quad">
+									<table id="c10" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(10,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(10,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(10,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(10,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c11" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(11,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(11,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(11,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(11,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+								<tr align="center">
+									<td class="quad">
+									<table id="c14" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(14,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(14,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(14,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(14,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+									<td class="quad">
+									<table id="c15" style="color: black; font-size-adjust: 2.3; width: 96px; height: 102px;" border="0">
+										<tbody>
+											<tr>
+												<td name="n1" onclick="clickNumber(15,1);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">1</td>
+												<td name="n2" onclick="clickNumber(15,2);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">2</td>
+											</tr>
+											<tr>
+												<td name="n3" onclick="clickNumber(15,3);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">3</td>
+												<td name="n4" onclick="clickNumber(15,4);" style="cursor: pointer; color: gray; font-size-adjust: 1; text-align: center;">4</td>
+											</tr>
+										</tbody>
+									</table></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+				</tbody>
+			</table>
+			<button onclick="undo()" id="btnUndo">
+				UNDO
+			</button>
+		</div>
+	</body>
+</html>
