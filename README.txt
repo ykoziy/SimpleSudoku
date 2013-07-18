@@ -1,3 +1,7 @@
+Yuriy Koziy
+yuriykoziy@hotmail.com
+
+
 SimpleSudoku
 ============
 
