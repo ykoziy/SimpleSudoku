@@ -41,7 +41,7 @@ function enableUndo() {
 //marks a cell with selected number
 function markCell(cell, value) {
     var element = $('c' + cell),
-        string = "<table id='" + cell + "'> <span>" + value + "</span> </table>";
+        string = "<table id='" + cell + "'> <td><span>" + value + "</span></td> </table>";
     element.innerHTML = string;
 }
 

@@ -1,275 +1,249 @@
 <!DOCTYPE html>
-
 <!-- File: 4x4sudoku.html -->
 <!-- Desc: 4x4 Sudoku game board -->
 <!-- Author: Yuriy koziy -->
-
 <html>
 	<head>
 		<title>4x4 Sudoku</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-        <script type="text/javascript" src="sudoku.js"></script>
+		<script type="text/javascript" src="sudoku.js"></script>
 		<script type="text/javascript" src="game.js"></script>
 	</head>
 	<body onload="initialize()">
 		<div id="cont">
 			<h1>Move Count: <span id="mcount">0</span></h1>
 			<table id="board">
-				<tbody>
-					<tr>
-						<td class="quadrant">
+				<tr>
+					<td class="quadrant">
 						<table id="b1">
-							<tbody>
-								<tr>
-									<td class="quad">
+							<tr>
+								<td class="quad">
 									<table id="c0">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(0,1);">1</td>
-												<td class="n2" onclick="clickNumber(0,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(0,3);">3</td>
-												<td class="n4" onclick="clickNumber(0,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(0,1);">1</td>
+											<td class="n2" onclick="clickNumber(0,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(0,3);">3</td>
+											<td class="n4" onclick="clickNumber(0,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c1">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(1,1);">1</td>
-												<td class="n2" onclick="clickNumber(1,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(1,3);">3</td>
-												<td class="n4" onclick="clickNumber(1,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-								<tr>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(1,1);">1</td>
+											<td class="n2" onclick="clickNumber(1,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(1,3);">3</td>
+											<td class="n4" onclick="clickNumber(1,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="quad">
 									<table id="c4">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(4,1);">1</td>
-												<td class="n2" onclick="clickNumber(4,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(4,3);">3</td>
-												<td class="n4" onclick="clickNumber(4,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(4,1);">1</td>
+											<td class="n2" onclick="clickNumber(4,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(4,3);">3</td>
+											<td class="n4" onclick="clickNumber(4,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c5">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(5,1);">1</td>
-												<td class="n2" onclick="clickNumber(5,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(5,3);">3</td>
-												<td class="n4" onclick="clickNumber(5,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-							</tbody>
-						</table></td>
-						<td class="quadrant">
+										<tr>
+											<td class="n1" onclick="clickNumber(5,1);">1</td>
+											<td class="n2" onclick="clickNumber(5,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(5,3);">3</td>
+											<td class="n4" onclick="clickNumber(5,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="quadrant">
 						<table id="b2">
-							<tbody>
-								<tr>
-									<td class="quad">
+							<tr>
+								<td class="quad">
 									<table id="c2">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(2,1);">1</td>
-												<td class="n2" onclick="clickNumber(2,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(2,3);">3</td>
-												<td class="n4" onclick="clickNumber(2,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(2,1);">1</td>
+											<td class="n2" onclick="clickNumber(2,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(2,3);">3</td>
+											<td class="n4" onclick="clickNumber(2,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c3">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(3,1);">1</td>
-												<td class="n2" onclick="clickNumber(3,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(3,3);">3</td>
-												<td class="n4" onclick="clickNumber(3,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-								<tr>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(3,1);">1</td>
+											<td class="n2" onclick="clickNumber(3,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(3,3);">3</td>
+											<td class="n4" onclick="clickNumber(3,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="quad">
 									<table id="c6">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(6,1);">1</td>
-												<td class="n2" onclick="clickNumber(6,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(6,3);">3</td>
-												<td class="n4" onclick="clickNumber(6,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(6,1);">1</td>
+											<td class="n2" onclick="clickNumber(6,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(6,3);">3</td>
+											<td class="n4" onclick="clickNumber(6,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c7">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(7,1);">1</td>
-												<td class="n2" onclick="clickNumber(7,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(7,3);">3</td>
-												<td class="n4" onclick="clickNumber(7,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-							</tbody>
-						</table></td>
-					</tr>
-					<tr>
-						<td class="quadrant">
+										<tr>
+											<td class="n1" onclick="clickNumber(7,1);">1</td>
+											<td class="n2" onclick="clickNumber(7,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(7,3);">3</td>
+											<td class="n4" onclick="clickNumber(7,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="quadrant">
 						<table id="b3">
-							<tbody>
-								<tr>
-									<td class="quad">
+							<tr>
+								<td class="quad">
 									<table id="c8">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(8,1);">1</td>
-												<td class="n2" onclick="clickNumber(8,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(8,3);">3</td>
-												<td class="n4" onclick="clickNumber(8,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(8,1);">1</td>
+											<td class="n2" onclick="clickNumber(8,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(8,3);">3</td>
+											<td class="n4" onclick="clickNumber(8,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c9">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(9,1);">1</td>
-												<td class="n2" onclick="clickNumber(9,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(9,3);">3</td>
-												<td class="n4" onclick="clickNumber(9,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-								<tr>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(9,1);">1</td>
+											<td class="n2" onclick="clickNumber(9,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(9,3);">3</td>
+											<td class="n4" onclick="clickNumber(9,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="quad">
 									<table id="c12">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(12,1);">1</td>
-												<td class="n2" onclick="clickNumber(12,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(12,3);">3</td>
-												<td class="n4" onclick="clickNumber(12,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(12,1);">1</td>
+											<td class="n2" onclick="clickNumber(12,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(12,3);">3</td>
+											<td class="n4" onclick="clickNumber(12,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c13">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(13,1);">1</td>
-												<td class="n2" onclick="clickNumber(13,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(13,3);">3</td>
-												<td class="n4" onclick="clickNumber(13,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-							</tbody>
-						</table></td>
-						<td class="quadrant">
+										<tr>
+											<td class="n1" onclick="clickNumber(13,1);">1</td>
+											<td class="n2" onclick="clickNumber(13,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(13,3);">3</td>
+											<td class="n4" onclick="clickNumber(13,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="quadrant">
 						<table id="b4">
-							<tbody>
-								<tr>
-									<td class="quad">
+							<tr>
+								<td class="quad">
 									<table id="c10">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(10,1);">1</td>
-												<td class="n2" onclick="clickNumber(10,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(10,3);">3</td>
-												<td class="n4" onclick="clickNumber(10,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(10,1);">1</td>
+											<td class="n2" onclick="clickNumber(10,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(10,3);">3</td>
+											<td class="n4" onclick="clickNumber(10,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c11">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(11,1);">1</td>
-												<td class="n2" onclick="clickNumber(11,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(11,3);">3</td>
-												<td class="n4" onclick="clickNumber(11,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-								<tr>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(11,1);">1</td>
+											<td class="n2" onclick="clickNumber(11,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(11,3);">3</td>
+											<td class="n4" onclick="clickNumber(11,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="quad">
 									<table id="c14">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(14,1);">1</td>
-												<td class="n2" onclick="clickNumber(14,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(14,3);">3</td>
-												<td class="n4" onclick="clickNumber(14,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-									<td class="quad">
+										<tr>
+											<td class="n1" onclick="clickNumber(14,1);">1</td>
+											<td class="n2" onclick="clickNumber(14,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(14,3);">3</td>
+											<td class="n4" onclick="clickNumber(14,4);">4</td>
+										</tr>
+									</table>
+								</td>
+								<td class="quad">
 									<table id="c15">
-										<tbody>
-											<tr>
-												<td class="n1" onclick="clickNumber(15,1);">1</td>
-												<td class="n2" onclick="clickNumber(15,2);">2</td>
-											</tr>
-											<tr>
-												<td class="n3" onclick="clickNumber(15,3);">3</td>
-												<td class="n4" onclick="clickNumber(15,4);">4</td>
-											</tr>
-										</tbody>
-									</table></td>
-								</tr>
-							</tbody>
-						</table></td>
-					</tr>
-				</tbody>
+										<tr>
+											<td class="n1" onclick="clickNumber(15,1);">1</td>
+											<td class="n2" onclick="clickNumber(15,2);">2</td>
+										</tr>
+										<tr>
+											<td class="n3" onclick="clickNumber(15,3);">3</td>
+											<td class="n4" onclick="clickNumber(15,4);">4</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
 			</table>
-			<button onclick="undo()" id="btnUndo">
-				UNDO
-			</button>
+			<button onclick="undo()" id="btnUndo">UNDO</button>
 		</div>
 	</body>
 </html>

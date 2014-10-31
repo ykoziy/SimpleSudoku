@@ -1,49 +1,59 @@
 body {
 	background-color: #9ED3DE;
 }
+
 table {
+	border-collapse: collapse; 
+	border-spacing: 0; 
 	table-layout: fixed;
 }
+
+span {
+	text-align: center;
+	display: block;
+}
+
 #cont {
 	text-align: center;
 	width: 100%;
 }
+
 #board {
-	margin-left: auto;
-	margin-right: auto;
+	margin: auto;
 	height: 400px;
 	width: 400px;
-	border-collapse: collapse;
 	border: 5px solid black;
 }
 
 .quad table {
-	color: black; 
-	font-size: 35pt;
 	width: 96px; 
 	height: 102px;
 }
 
-.quad td {
-	cursor: pointer; 
+.quad span {
+	color: black; 
+	font-size: 40pt;
+}
+
+.n1, .n2, .n3, .n4 {
+	cursor: pointer;
 	color: gray; 
-	font-size: 20pt; 
+	font-size: 25pt; 
 	text-align: center;
+}
+
+.n1:hover, .n2:hover, .n3:hover, .n4:hover {
+	color: #E37171;
 }
 
 .quadrant {
+	text-align: center;
 	border: 3px solid black;
-	text-align: center;
-}
-
-.quadrant tr {
-	text-align: center;
 }
 
 #b1, #b2, #b3, #b4 {
 	height: 191px;
 	width: 191px;
-	border-collapse: collapse;
 }
 
 .quad {
@@ -55,9 +65,4 @@ table {
 	width: 100px;
 	height: 50px;
 	font-weight: bold;
-}
-
-span {
-	text-align: center;
-	display: block;
 }
