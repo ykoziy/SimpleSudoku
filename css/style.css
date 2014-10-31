@@ -1,0 +1,63 @@
+body {
+	background-color: #9ED3DE;
+}
+table {
+	table-layout: fixed;
+}
+#cont {
+	text-align: center;
+	width: 100%;
+}
+#board {
+	margin-left: auto;
+	margin-right: auto;
+	height: 400px;
+	width: 400px;
+	border-collapse: collapse;
+	border: 5px solid black;
+}
+
+.quad table {
+	color: black; 
+	font-size: 35pt;
+	width: 96px; 
+	height: 102px;
+}
+
+.quad td {
+	cursor: pointer; 
+	color: gray; 
+	font-size: 20pt; 
+	text-align: center;
+}
+
+.quadrant {
+	border: 3px solid black;
+	text-align: center;
+}
+
+.quadrant tr {
+	text-align: center;
+}
+
+#b1, #b2, #b3, #b4 {
+	height: 191px;
+	width: 191px;
+	border-collapse: collapse;
+}
+
+.quad {
+	border: 1px solid black;
+}
+
+#btnUndo {
+	color: red;
+	width: 100px;
+	height: 50px;
+	font-weight: bold;
+}
+
+span {
+	text-align: center;
+	display: block;
+}
