@@ -95,7 +95,7 @@ function checkRow(board, row) {
 			if(hit[board[row][col]] === 1) {
 				ret = 0;
 			}
-			hit[board[row][col]] = 1
+			hit[board[row][col]] = 1;
 		} else {
 			emptyCells.push(col);
 		}
@@ -128,7 +128,7 @@ function checkColumn(board, col) {
 			if(hit[board[row][col]] === 1) {
 				ret = 0;
 			}
-			hit[board[row][col]] = 1
+			hit[board[row][col]] = 1;
 		} else {
 			emptyCells.push(row);
 		}
@@ -162,7 +162,7 @@ function checkQuadrant(board, row, col) {
 				if(hit[board[i][j]] === 1) {
 					ret = 0;
 				}
-				hit[board[i][j]] = 1
+				hit[board[i][j]] = 1;
 			} else {
 				emptyCells.push({r: i, c: j});
 			}
